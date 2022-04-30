@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Demo-crud</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="mt-4"></div>
+	<div class="container mt-4">
+		<div class="mt-4">
+			<form th:action="@{/save}" th:object=${persona} method="post">
+				<div class="card">
+					<div class="card-header">
+						<h3>New Person</h3>
+					</div>
+					<div class="form-group">
+						<label>ID</label>
+						<!-- para obtenerlos datos es con * IMPORTANTE -->
+						<input type="text"class="form-control" th:field="*{id}">
+					</div>
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text"class="form-control" th:field="*{name}">
+					</div>
+					<div class="form-group">
+						<label>Phone</label>
+						<input type="text"class="form-control" th:field="*{phone}">
+					</div>
+					
+				</div>
+				<div class="card-footer">
+					<input type="submit" value="Save" class="btn btn-success">
+				</div>
+			</form> 
+		
+		</div>
+	</div>
+	<div class="mt-4"></div>
+</body>
+</html>
